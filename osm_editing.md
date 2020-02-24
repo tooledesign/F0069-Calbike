@@ -39,16 +39,18 @@ Download Data tool.
 [image]
 
 Navigate the map to the area you wish to download and draw a rectangle around
-it. JOSM will automatically download this data for you. At this point, you will
-want to save the data as an .osm file on your machine. This will allow you to
-work on local data and will also make it easy to create a copy for when you're
-ready to work on the planned network.
+it. JOSM will automatically download this data for you. You can download new
+data at any point by repeating this process.
 
 ## Editing OSM
+
+#### Basic Editing
 
 OSM is based on a key=value scheme. Each key=value pair is called a tag. When
 you edit OSM, your work will be to add or edit tags on the transportation
 network to accurately reflect conditions for bicycling.
+
+[image]
 
 To edit a tag on an individual feature, you can simply click on the feature to
 select it. The interface will show a list of tags. If you're editing an existing
@@ -57,25 +59,50 @@ select the `+` symbol to bring up the new tag dialog. This will ask you for a
 key and the value.
 
 PeopleForBikes has published [tagging
-guidelines](https://docs.google.com/document/d/1HuAXQUnCEcv9aLZyIDHkLTJ5ZSKfB-U4MlJSmN-1BLk/edit?usp=sharing)
-for the BNA that should cover most of the conditions you will come across.
+guidelines](
+    https://docs.google.com/document/d/1HuAXQUnCEcv9aLZyIDHkLTJ5ZSKfB-U4MlJSmN-1BLk/edit?usp=sharing
+)
+for the BNA that should cover most of the conditions you will come across. You
+may also wish to refer to the official OSM guidelines for various features.
+These are linked in the below list.
 
 The main conditions you need to pay attention to are:
 
-- Speed limits
-- Bike facilities
-- Number of lanes
-- Parking
+- [Speed limits](https://wiki.openstreetmap.org/wiki/Speed_limits) - Pay special
+attention to adding `mph` to these. If you omit `mph` from the tag it assumes
+kilometers per hour. (e.g. `30 mph`)
+- [Bike facilities](https://wiki.openstreetmap.org/wiki/Bicycle)
+- [Number of lanes](https://wiki.openstreetmap.org/wiki/Lanes)
+- [Parking](https://wiki.openstreetmap.org/wiki/Parking)
+- [Traffic signals](https://wiki.openstreetmap.org/wiki/Key:traffic_signals) -
+These tags apply to points on the map as opposed to lines like the other
+characteristics.
 
 You can edit multiple features at once by shift+clicking on all the features you
 want to edit and then updating/adding a tag as needed. This is convenient for
 updating a speed limit that extends the length of a corridor, for example.
+
+#### Splitting Features
+
+You may come across instances where you need to split a line because the roadway conditions change. Splitting a line is accomplished by selecting the node where you want to split the line, also selecting the line (via shift+click) and selecting `Tools->Split Way`.
+
+[image]
+
+#### Drawing New Features
+
+If you need to add a new line (for example, an off-street trail connection) you can draw the line with the `Draw Nodes` tool.
+
+[image]
+
+OSM and the BNA require accurate _topology_ which means you need to place points on the line where intersections occur.
 
 ## Syncing with the Main OSM Database
 
 When you have completed edits to the _existing conditions_ you can upload your
 changes to the main OSM database by clicking the Upload tool. This will ask for
 your OSM user credentials and a description of the changes you've made.
+
+[image]
 
 **Please note**: It is recommended that you upload your changes in small batches
 of edits that all share a similar theme. For example, you could update speed
