@@ -1,0 +1,32 @@
+# requirements for tooles
+pandas==1.0.1
+psycopg2-binary
+sqlalchemy
+pyyaml
+scikit-image
+beautifultable
+tqdm
+statistics
+rasterio ; sys_platform=="linux2"
+geopandas ; sys_platform=="linux2"
+
+K:\_GIS_TDG_Ref\__Python wheels\pyproj-2.4.2.post1-cp37-cp37m-win_amd64.whl ; sys_platform=="win32" and python_version == '3.7'
+K:\_GIS_TDG_Ref\__Python wheels\pyproj-1.9.6-cp27-cp27m-win_amd64.whl ; sys_platform=="win32" and python_version == '2.7'
+
+K:\_GIS_TDG_Ref\__Python wheels\GDAL-3.0.4-cp37-cp37m-win_amd64.whl ; sys_platform=="win32" and python_version == '3.7'
+K:\_GIS_TDG_Ref\__Python wheels\GDAL-2.2.4-cp27-cp27m-win_amd64.whl ; sys_platform=="win32" and python_version == '2.7'
+
+K:\_GIS_TDG_Ref\__Python wheels\Shapely-1.7.0-cp37-cp37m-win_amd64.whl ; sys_platform=="win32" and python_version == '3.7'
+K:\_GIS_TDG_Ref\__Python wheels\Shapely-1.6.4.post2-cp27-cp27m-win_amd64.whl ; sys_platform=="win32" and python_version == '2.7'
+
+K:\_GIS_TDG_Ref\__Python wheels\Fiona-1.8.13-cp37-cp37m-win_amd64.whl ; sys_platform=="win32" and python_version == '3.7'
+K:\_GIS_TDG_Ref\__Python wheels\Fiona-1.8.13-cp27-cp27m-win_amd64.whl ; sys_platform=="win32" and python_version == '2.7'
+
+K:\_GIS_TDG_Ref\__Python wheels\rasterio-1.1.2-cp37-cp37m-win_amd64.whl ; sys_platform=="win32" and python_version == '3.7'
+K:\_GIS_TDG_Ref\__Python wheels\rasterio-1.1.2-cp27-cp27m-win_amd64.whl ; sys_platform=="win32" and python_version == '2.7'
+
+K:\_GIS_TDG_Ref\__Python wheels\Rtree-0.9.4-cp37-cp37m-win_amd64.whl ; sys_platform=="win32" and python_version == '3.7'
+K:\_GIS_TDG_Ref\__Python wheels\Rtree-0.9.3-cp27-cp27m-win_amd64.whl ; sys_platform=="win32" and python_version == '2.7'
+
+geopandas ; sys_platform=="win32"
+osmnx==0.9
