@@ -36,11 +36,19 @@ download an .osm from any number of good sources, such as
 To download data for the area you wish to work on, open JOSM and select the
 Download Data tool.
 
-[image]
+![Downloading](images/dl.png)
 
 Navigate the map to the area you wish to download and draw a rectangle around
 it. JOSM will automatically download this data for you. You can download new
 data at any point by repeating this process.
+
+While working on existing conditions, it is not necessary to download the entire
+area of interest. Instead, we suggest you work in a small area and routinely
+download new data from OSM as you move through the area of interest.
+
+Multiple users can be working on the existing conditions as long as each user is
+regularly downloading the latest OSM and submitting their edits back to the main
+database.
 
 ## Editing OSM
 
@@ -50,7 +58,7 @@ OSM is based on a key=value scheme. Each key=value pair is called a tag. When
 you edit OSM, your work will be to add or edit tags on the transportation
 network to accurately reflect conditions for bicycling.
 
-[image]
+![Tags](images/tags.png)
 
 To edit a tag on an individual feature, you can simply click on the feature to
 select it. The interface will show a list of tags. If you're editing an existing
@@ -84,17 +92,22 @@ updating a speed limit that extends the length of a corridor, for example.
 
 #### Splitting Features
 
-You may come across instances where you need to split a line because the roadway conditions change. Splitting a line is accomplished by selecting the node where you want to split the line, also selecting the line (via shift+click) and selecting `Tools->Split Way`.
+You may come across instances where you need to split a line because the roadway
+conditions change. Splitting a line is accomplished by selecting the node where
+you want to split the line, also selecting the line (via shift+click) and
+selecting `Tools->Split Way`.
 
-[image]
+![Split](images/split.png)
 
 #### Drawing New Features
 
-If you need to add a new line (for example, an off-street trail connection) you can draw the line with the `Draw Nodes` tool.
+If you need to add a new line (for example, an off-street trail connection) you
+can draw the line with the `Draw Nodes` tool.
 
-[image]
+![Draw Nodes](images/draw_nodes.png)
 
-OSM and the BNA require accurate _topology_ which means you need to place points on the line where intersections occur.
+OSM and the BNA require accurate _topology_ which means you need to place points
+on the line where intersections occur.
 
 ## Syncing with the Main OSM Database
 
@@ -102,7 +115,7 @@ When you have completed edits to the _existing conditions_ you can upload your
 changes to the main OSM database by clicking the Upload tool. This will ask for
 your OSM user credentials and a description of the changes you've made.
 
-[image]
+![Upload](images/upload.png)
 
 **Please note**: It is recommended that you upload your changes in small batches
 of edits that all share a similar theme. For example, you could update speed
@@ -112,5 +125,34 @@ attributes.
 
 ## Working with the Planned Network
 
-Save copy of .osm file
-DO NOT UPLOAD TO OSM!
+Once you've completed all edits to _existing_ conditions on the OSM network,
+you're ready to work on the _planned_ network. Because these edits are not
+intended for the main OSM database you will need to work off of a local file.
+
+To begin, re-download OSM for the area you're working in. This will ensure you
+have the latest edits from any other users who have been working in the same
+area (including other Calbike staff who may have been making edits for other
+characteristics).
+
+With the latest OSM data _for the entire area of interest_ loaded into JOSM
+(possibly downloaded with bbbike or another service if the area of interest is
+too large to download through JOSM), save **two** copies of the data. The first
+will be an official copy of the latest existing conditions for use in the BNA.
+The second will be an official copy of the planned network for use in the BNA.
+The existing OSM file can be set aside until it is time run the BNA.
+
+You can save local copies of the OSM data using the Save button.
+
+![Upload](images/save.png)
+
+The planned network can be updated in JOSM using the same methods as for the
+existing network. The only difference is that you will not upload your changes
+to the main OSM server. Instead, you can save updates to the planned OSM file
+with the Save button.
+
+Because the planned network can only be edited on a local .osm file, there is
+no ability for concurrent editing (multiple users). If you desire to have
+multiple people make changes to the planned network, you'll need to coordinate
+to ensure two people aren't editing at the same time. If two people edit
+concurrently, the .osm file will only reflect the edits of the most recent save
+(i.e. one of the user's edits will be lost).
