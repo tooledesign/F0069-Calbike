@@ -129,17 +129,22 @@ Once you've completed all edits to _existing_ conditions on the OSM network,
 you're ready to work on the _planned_ network. Because these edits are not
 intended for the main OSM database you will need to work off of a local file.
 
-To begin, re-download OSM for the area you're working in. This will ensure you
+To begin, re-download OSM for the entire area of interest. This will ensure you
 have the latest edits from any other users who have been working in the same
 area (including other Calbike staff who may have been making edits for other
 characteristics).
 
-With the latest OSM data _for the entire area of interest_ loaded into JOSM
-(possibly downloaded with bbbike or another service if the area of interest is
-too large to download through JOSM), save **two** copies of the data. The first
-will be an official copy of the latest existing conditions for use in the BNA.
-The second will be an official copy of the planned network for use in the BNA.
-The existing OSM file can be set aside until it is time run the BNA.
+You'll likely need to download this OSM data from bbbike or another service
+since the full area of interest around a station is probably too large for the
+JOSM downloader to handle. You will want to download the OSM file as a .osm
+(XML) format. These are usually distributed as compressed files (e.g. zip, gz,
+7z, or similar). Compression is fine, just make sure it's the XML version.
+
+With the latest OSM data _for the entire area of interest_ loaded into JOSM,
+save **two** copies of the data. The first will be an official copy of the
+latest existing conditions for use in the BNA. The second will be an official
+copy of the planned network for use in the BNA. The existing OSM file can be set
+aside until it is time run the BNA.
 
 You can save local copies of the OSM data using the Save button.
 
