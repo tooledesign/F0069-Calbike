@@ -76,7 +76,7 @@ bna:
     destinations:
       - name: people
         weight: 15
-        table: neighborhood_census_blocks
+        table: "generated.bakersfield_blocks"
         method: percentage
         datafield: pop10
         maxpoints: 100
@@ -277,7 +277,7 @@ stress:
         intersection_tolerance: 5
         control:
             # control is required
-            table: neighborhood_ways_intersections
+            table: "generated.bakersfield_ints"
             geom: geom
             column:
                 name: "control"
@@ -286,7 +286,7 @@ stress:
                 rrfb: "rrfb"
                 hawk: "hawk"
         island:
-            table: neighborhood_ways_intersections
+            table: "generated.bakersfield_ints"
             geom: geom
             column:
                 name: "island"
