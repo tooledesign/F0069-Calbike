@@ -10,6 +10,7 @@ s = pybna.Stress(config="/home/sgardner/config.yaml")
 s.segment_stress()
 s.crossing_stress()
 
-
 # connectivity
 bna = pybna.pyBNA(config="/home/sgardner/config.yaml")
+bna.build_network()
+bna.calculate_connectivity()

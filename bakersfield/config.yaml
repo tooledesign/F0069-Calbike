@@ -246,6 +246,14 @@ bna:
             - "['amenity'='bus_station']"
             - "['railway'='station']"
             - "['public_transport'='station']"
+      - name: hsr
+        weight: 0
+        table: "generated.bakersfield_hsr"
+        method: count
+        maxpoints: 100
+        breaks: {1: 100}
+        uid: id
+        geom: geom
 
 stress:
     lookup_tables:
