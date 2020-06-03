@@ -22,11 +22,11 @@ db:
 
 bna:
     boundary:
-        table: "received.bakersfield_boundary" # tables are optionally schema-qualified
+        table: "received.fresno_boundary" # tables are optionally schema-qualified
         geom: "geom"
 
     blocks:
-        table: "generated.bakersfield_blocks"
+        table: "generated.fresno_blocks"
         uid: "blockid10"
         population: "pop10"
         geom: "geom"
@@ -35,7 +35,7 @@ bna:
 
     network:
         roads:
-            table: "generated.bakersfield_streets"
+            table: "generated.fresno_streets"
             geom: "geom"
             uid: "id"
             source_column: "source"
@@ -49,23 +49,23 @@ bna:
                     forward: fwd_int_stress
                     backward: bwd_int_stress
         intersections:
-            table: "generated.bakersfield_ints"
+            table: "generated.fresno_ints"
             geom: "geom"
             uid: "id"
             cluster_distance: 5
         edges:
-            table: "generated.bakersfield_edges"
+            table: "generated.fresno_edges"
             source_column: "source_node"
             target_column: "target_node"
             stress_column: "edge_stress"
             cost_column: "edge_cost"
             id_column: id
         nodes:
-            table: "generated.bakersfield_nodes"
+            table: "generated.fresno_nodes"
             id_column: id
 
     connectivity:
-        table: "automated.bakersfield_connected_blocks"
+        table: "automated.fresno_connected_blocks"
         source_column: "source_id"
         target_column: "target_id"
         max_distance: 2680
@@ -76,7 +76,7 @@ bna:
     destinations:
       - name: people
         weight: 15
-        table: "generated.bakersfield_blocks"
+        table: "generated.fresno_blocks"
         method: percentage
         datafield: pop10
         maxpoints: 100
@@ -96,7 +96,7 @@ bna:
             uid: blockid10
           - name: schools
             weight: 35
-            table: bna_schools
+            table: fresno_schools
             method: count
             maxpoints: 100
             breaks: {1: 30, 2: 20, 3: 20}
@@ -106,7 +106,7 @@ bna:
                 - "['amenity'='school']"
           - name: colleges
             weight: 10
-            table: bna_colleges
+            table: fresno_colleges
             method: count
             maxpoints: 100
             breaks: {1: 70}
@@ -116,7 +116,7 @@ bna:
                 - "['amenity'='college']"
           - name: universities
             weight: 20
-            table: bna_universities
+            table: fresno_universities
             method: count
             maxpoints: 100
             breaks: {1: 70}
@@ -129,7 +129,7 @@ bna:
         subcats:
           - name: doctors
             weight: 20
-            table: bna_doctors
+            table: fresno_doctors
             method: count
             maxpoints: 100
             breaks: {1: 40, 2: 20, 3: 10}
@@ -141,7 +141,7 @@ bna:
                 - "['amenity'='clinic']"
           - name: dentists
             weight: 10
-            table: bna_dentists
+            table: fresno_dentists
             method: count
             maxpoints: 100
             breaks: {1: 40, 2: 20, 3: 10}
@@ -151,7 +151,7 @@ bna:
                 - "['amenity'='dentist']"
           - name: hospitals
             weight: 20
-            table: bna_hospitals
+            table: fresno_hospitals
             method: count
             maxpoints: 100
             breaks: {1: 70}
@@ -162,7 +162,7 @@ bna:
                 - "['amenity'='hospitals']"
           - name: pharmacies
             weight: 10
-            table: bna_pharmacies
+            table: fresno_pharmacies
             method: count
             maxpoints: 100
             breaks: {1: 40, 2: 20, 3: 10}
@@ -172,7 +172,7 @@ bna:
                 - "['amenity'='pharmacy']"
           - name: supermarkets
             weight: 25
-            table: bna_supermarkets
+            table: fresno_supermarkets
             method: count
             maxpoints: 100
             breaks: {1: 60, 2: 20}
@@ -182,7 +182,7 @@ bna:
                 - "['shop'='supermarket']"
           - name: social_services
             weight: 15
-            table: bna_social_services
+            table: fresno_social_services
             method: count
             maxpoints: 100
             breaks: {1: 70}
@@ -195,7 +195,7 @@ bna:
         subcats:
           - name: parks
             weight: 40
-            table: bna_parks
+            table: fresno_parks
             method: count
             maxpoints: 100
             breaks: {1: 30, 2: 20, 3: 20}
@@ -208,14 +208,14 @@ bna:
                 - "['leisure'='playground']"
         #   - name: trails
         #     weight: 35
-        #     table: bna_paths
+        #     table: fresno_paths
         #     method: count
         #     maxpoints: 100
         #     breaks: {1: 70, 2: 20}
         #     method: trails
           - name: community_centers
             weight: 25
-            table: bna_community_centers
+            table: fresno_community_centers
             method: count
             maxpoints: 100
             breaks: {1: 40, 2: 20, 3: 10}
@@ -226,7 +226,7 @@ bna:
                 - "['amenity'='community_center']"
       - name: retail
         weight: 15
-        table: bna_retail
+        table: fresno_retail
         method: count
         maxpoints: 100
         breaks: {1: 40, 2: 20, 3: 10}
@@ -236,7 +236,7 @@ bna:
             - "['landuse'='retail']"
       - name: transit
         weight: 15
-        table: bna_transit
+        table: fresno_transit
         method: count
         maxpoints: 100
         breaks: {1: 60}
@@ -248,7 +248,7 @@ bna:
             - "['public_transport'='station']"
       - name: hsr
         weight: 0
-        table: "generated.bakersfield_hsr"
+        table: "generated.fresno_hsr"
         method: count
         maxpoints: 100
         breaks: {1: 100}
@@ -285,7 +285,7 @@ stress:
         intersection_tolerance: 1
         control:
             # control is required
-            table: "generated.bakersfield_ints"
+            table: "generated.fresno_ints"
             geom: geom
             column:
                 name: "control"
@@ -294,7 +294,7 @@ stress:
                 rrfb: "rrfb"
                 hawk: "hawk"
         island:
-            table: "generated.bakersfield_ints"
+            table: "generated.fresno_ints"
             geom: geom
             column:
                 name: "island"
