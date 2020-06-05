@@ -6,11 +6,16 @@ i.import_osm_network(osm_file="/home/sgardner/BakoPlannedRoutesFinal.osm",keep_h
 
 # stress
 s = pybna.Stress(config="/home/sgardner/config.yaml")
+s.drop_table("generated.bna_stress_seg_forward")
+s.drop_table("generated.bna_stress_seg_backward")
+s.drop_table("generated.bna_stress_cross_forward")
+s.drop_table("generated.bna_stress_cross_backward")
 s.segment_stress()
 s.crossing_stress()
 
 # at this point we need to parse the lts=low tags in the OSM
 # and override stress scores before proceeding
+# see process_lts.sql
 
 # connectivity
 bna = pybna.pyBNA(config="/home/sgardner/config.yaml")
