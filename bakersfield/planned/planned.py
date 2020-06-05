@@ -9,6 +9,9 @@ s = pybna.Stress(config="/home/sgardner/config.yaml")
 s.segment_stress()
 s.crossing_stress()
 
+# at this point we need to parse the lts=low tags in the OSM
+# and override stress scores before proceeding
+
 # connectivity
 bna = pybna.pyBNA(config="/home/sgardner/config.yaml")
 bna.build_network()
