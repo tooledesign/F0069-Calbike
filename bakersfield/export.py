@@ -12,19 +12,34 @@ bna.export_table(
 )
 
 bna.export_table(
+    "automated.bakersfield_planned_bna_scores",
+    "/home/spencer/gis/calbike/bakersfield.gpkg",
+    layer="bna_scores_planned"
+)
+
+bna.export_table(
     "automated.bakersfield_hsr_travel_shed",
     "/home/spencer/gis/calbike/bakersfield.gpkg",
     layer="travel_shed_existing"
 )
 
 bna.export_table(
-    "automated.bakersfield_bna_scores_improved",
+    "automated.bakersfield_planned_hsr_travel_shed",
     "/home/spencer/gis/calbike/bakersfield.gpkg",
-    layer="bna_scores_improved"
+    layer="travel_shed_planned"
 )
 
-bna.export_table(
-    "automated.bakersfield_hsr_travel_shed_improved",
-    "/home/spencer/gis/calbike/bakersfield.gpkg",
-    layer="travel_shed_improved"
-)
+
+# improved
+#
+# bna.export_table(
+#     "automated.bakersfield_bna_scores_improved",
+#     "/home/spencer/gis/calbike/bakersfield.gpkg",
+#     layer="bna_scores_improved"
+# )
+#
+# bna.export_table(
+#     "automated.bakersfield_hsr_travel_shed_improved",
+#     "/home/spencer/gis/calbike/bakersfield.gpkg",
+#     layer="travel_shed_improved"
+# )
