@@ -16,7 +16,7 @@ bna.build_network()
 bna.calculate_connectivity()
 
 # scores
-bna.score("automated.bna_scores",with_geoms=True)
+bna.score("automated.bakersfield_bna_scores",with_geoms=True)
 
 # travel sheds
 bna.travel_sheds(["060290006002009"],"automated.bakersfield_hsr_travel_shed")
