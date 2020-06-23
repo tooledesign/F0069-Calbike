@@ -6,6 +6,18 @@ bna = pybna.pyBNA(config="/home/spencer/dev/calbike/bakersfield/planned/config.y
 bna.export("/home/spencer/gis/calbike/bakersfield.gpkg")
 
 bna.export_table(
+    "generated.bakersfield_existing_edges",
+    "/home/spencer/gis/calbike/bakersfield.gpkg",
+    layer="bna_edges_existing"
+)
+
+bna.export_table(
+    "generated.bakersfield_planned_edges",
+    "/home/spencer/gis/calbike/bakersfield.gpkg",
+    layer="bna_edges_planned"
+)
+
+bna.export_table(
     "automated.bakersfield_bna_scores",
     "/home/spencer/gis/calbike/bakersfield.gpkg",
     layer="bna_scores_existing"
