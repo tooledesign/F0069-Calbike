@@ -1,4 +1,5 @@
 import pybna
+from psycopg2 import sql
 
 # import network
 i = pybna.Importer(config="/home/sgardner/config.yaml")
@@ -25,5 +26,10 @@ bna.calculate_connectivity()
 # scores
 bna.score("automated.bakersfield_planned_bna_scores",with_geoms=True)
 
-# travel sheds
+# 3 mi travel shed around station
+bna.config.bna.connectivity.table = "automated.bakersfield_planned_connected_blocks_3mi"
+bna.db_connectivity_table = "automated.bakersfield_planned_connected_blocks_3mi"
+bna.sql_subs["connectivity_table"] = sql.Identifier("bakersfield_planned_connected_blocks_3mi")
+bna.sql_subs["connectivity_max_distance"] = sql.Literal(4830)
+bna.calculate_connectivity(blocks=["060290006002009"])
 bna.travel_sheds(["060290006002009"],"automated.bakersfield_planned_hsr_travel_shed")

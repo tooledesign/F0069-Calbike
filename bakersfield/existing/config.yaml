@@ -54,14 +54,14 @@ bna:
             uid: "id"
             cluster_distance: 5
         edges:
-            table: "generated.bakersfield_edges"
+            table: "generated.bakersfield_existing_edges"
             source_column: "source_node"
             target_column: "target_node"
             stress_column: "edge_stress"
             cost_column: "edge_cost"
             id_column: id
         nodes:
-            table: "generated.bakersfield_nodes"
+            table: "generated.bakersfield_existing_nodes"
             id_column: id
 
     connectivity:
