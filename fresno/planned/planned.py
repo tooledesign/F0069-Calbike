@@ -4,7 +4,7 @@ from psycopg2 import sql
 # import network
 # use the calbike branch on the pdx server so that LTS tags are preserved
 i = pybna.Importer(config="/home/sgardner/config.yaml")
-i.import_osm_network(osm_file="/home/sgardner/fresno_reducedjuly27.osm",keep_holding_tables=True)
+i.import_osm_network(osm_file="/home/sgardner/fresno_reducedaug5.osm",keep_holding_tables=True)
 
 # stress
 s = pybna.Stress(config="/home/sgardner/config.yaml")

@@ -10,7 +10,7 @@ WHERE EXISTS (
     FROM generated.merced_planned_osm_ways w
     WHERE
         w.osmid && s.osmid
-        AND trim(lower(w.lts)) = 'low stress'
+        AND trim(lower(w.lts)) = 'low'
 );
 
 -- handle new trails
