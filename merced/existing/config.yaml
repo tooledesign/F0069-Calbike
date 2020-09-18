@@ -17,7 +17,7 @@ units: mi # units for speed limit, width, etc.
 db:
     user: "gis"
     password: "gis"
-    host: "192.168.60.220"
+    host: "192.168.60.227"
     dbname: "calbike"
 
 bna:
