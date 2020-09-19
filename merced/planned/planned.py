@@ -25,7 +25,7 @@ bna.build_network()
 bna.calculate_connectivity()
 
 # scores
-bna.score("automated.merced_planned_bna_scores",with_geoms=True)
+bna.score("automated.merced_planned_bna_scores",with_geoms=True,overwrite=True)
 
 # 3 mi travel shed around station
 bna.config.bna.connectivity.table = "automated.merced_planned_connected_blocks_3mi"
@@ -33,4 +33,4 @@ bna.db_connectivity_table = "automated.merced_planned_connected_blocks_3mi"
 bna.sql_subs["connectivity_table"] = sql.Identifier("merced_planned_connected_blocks_3mi")
 bna.sql_subs["connectivity_max_distance"] = sql.Literal(4830)
 bna.calculate_connectivity(blocks=["060290006002009"])
-bna.travel_sheds(["060290006002009"],"automated.merced_planned_hsr_travel_shed")
+bna.travel_sheds(["060290006002009"],"automated.merced_planned_hsr_travel_shed",overwrite=True)
