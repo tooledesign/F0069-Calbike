@@ -24,10 +24,11 @@ s.crossing_stress()
 bna = pybna.pyBNA(config="/home/sgardner/config.yaml")
 bna.build_network()
 bna.calculate_connectivity()
+bna.calculate_scenario_connectivity("project")
+
 
 #### left off here
 
-bna.calculate_scenario_connectivity("project")
 
 # get scores for each scenario
 conn = bna.get_db_connection()
