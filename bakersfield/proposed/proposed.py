@@ -47,4 +47,4 @@ bna.calculate_connectivity(blocks=["060290006002009"])
 for project in projects:
     table = "automated.bakersfield_proposed_hsr_travel_shed_{}".format(project.replace(" ","_").lower())
     bna.calculate_scenario_connectivity("project",scenario_ids=[project],origin_blocks=["060290006002009"])
-    bna.travel_sheds(["060290006002009"],table)
+    bna.travel_sheds(["060290006002009"],table,scenario_id=project,overwrite=True)
