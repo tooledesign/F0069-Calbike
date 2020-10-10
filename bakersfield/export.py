@@ -55,19 +55,16 @@ for project in projects:
     bna_layer = "bna_scores_{}".format(project.replace(" ","_").lower())
     shed_table = "automated.bakersfield_proposed_hsr_travel_shed_{}".format(project.replace(" ","_").lower())
     shed_layer = "travel_shed_{}".format(project.replace(" ","_").lower())
-
     bna.export_table(
         edge_table,
         "/home/spencer/gis/calbike/bakersfield_proposed.gpkg",
         layer=edge_layer
     )
-
     bna.export_table(
         bna_table,
         "/home/spencer/gis/calbike/bakersfield_proposed.gpkg",
         layer=bna_layer
     )
-
     bna.export_table(
         shed_table,
         "/home/spencer/gis/calbike/bakersfield_proposed.gpkg",
