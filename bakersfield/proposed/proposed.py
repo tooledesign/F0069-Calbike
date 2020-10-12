@@ -48,3 +48,20 @@ for project in projects:
     table = "automated.bakersfield_proposed_hsr_travel_shed_{}".format(project.replace(" ","_").lower())
     bna.calculate_scenario_connectivity("project",scenario_ids=[project],origin_blocks=["060290006002009"])
     bna.travel_sheds(["060290006002009"],table,scenario_id=project,overwrite=True)
+
+# aggregate scores
+bna.aggregate("automated.bakersfield_proposed_aggregate_scores","automated.bakersfield_planned_bna_scores",overwrite=True,scenario_name="Planned network")
+q_id = "alter table {} drop column id;"
+q_insert = """
+    insert into automated.bakersfield_proposed_aggregate_scores
+    select * from {};
+"""
+bna._run_sql(q_id.format("automated.bakersfield_proposed_aggregate_scores"))
+for project in projects:
+    bna_table = "automated.bakersfield_proposed_bna_scores_{}".format(project.replace(" ","_").lower())
+    agg_table = "scratch.bakersfield_agg_{}".format(project.replace(" ","_").lower())
+    bna.aggregate(agg_table,bna_table,scenario_name=project,overwrite=True)
+    bna._run_sql(q_id.format(agg_table))
+    bna._run_sql(q_insert.format(agg_table))
+    bna.drop_table(agg_table)
+bna._run_sql("alter table automated.bakersfield_proposed_aggregate_scores add column id serial primary key;")

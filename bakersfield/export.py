@@ -70,6 +70,12 @@ for project in projects:
         "/home/spencer/gis/calbike/bakersfield_proposed.gpkg",
         layer=shed_layer
     )
+bna.export_table(
+    "automated.bakersfield_proposed_aggregate_scores",
+    "/home/spencer/gis/calbike/bakersfield_proposed.gpkg",
+    layer="aggregate_scores",
+    nonspatial=True
+)
 
 
 
