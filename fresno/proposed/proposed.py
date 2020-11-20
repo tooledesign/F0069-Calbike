@@ -43,11 +43,11 @@ bna.config.bna.connectivity.table = "automated.fresno_proposed_connected_blocks_
 bna.db_connectivity_table = "automated.fresno_proposed_connected_blocks_3mi"
 bna.sql_subs["connectivity_table"] = sql.Identifier("fresno_proposed_connected_blocks_3mi")
 bna.sql_subs["connectivity_max_distance"] = sql.Literal(4830)
-bna.calculate_connectivity(blocks=["060290006002009"])
+bna.calculate_connectivity(blocks=["060190003002002"])
 for project in projects:
     table = "automated.fresno_proposed_hsr_travel_shed_{}".format(project.replace(" ","_").lower())
-    bna.calculate_scenario_connectivity("project",scenario_ids=[project],origin_blocks=["060290006002009"])
-    bna.travel_sheds(["060290006002009"],table,scenario_id=project,overwrite=True)
+    bna.calculate_scenario_connectivity("project",scenario_ids=[project],origin_blocks=["060190003002002"])
+    bna.travel_sheds(["060190003002002"],table,scenario_id=project,overwrite=True)
 
 # aggregate scores
 bna.aggregate("automated.fresno_proposed_aggregate_scores","automated.fresno_planned_bna_scores",overwrite=True,scenario_name="Planned network")
