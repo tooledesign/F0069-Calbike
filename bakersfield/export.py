@@ -47,6 +47,7 @@ conn = bna.get_db_connection()
 cur = conn.cursor()
 cur.execute("select distinct project from generated.bakersfield_proposed_streets where project is not null")
 projects = [p[0] for p in cur.fetchall()]
+projects.append("all_projects")
 for project in projects:
     print(project)
     edge_table = "automated.bakersfield_proposed_edges_{}".format(project.replace(" ","_").lower())
