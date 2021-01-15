@@ -43,6 +43,12 @@ bna.export_table(
 
 bna = pybna.pyBNA(config="/home/spencer/dev/calbike/fresno/proposed/config.yaml")
 
+bna.export_table(
+    "generated.fresno_proposed_streets",
+    "/home/spencer/gis/calbike/fresno_proposed.gpkg",
+    layer="fresno_proposed_streets"
+)
+
 conn = bna.get_db_connection()
 cur = conn.cursor()
 cur.execute("select distinct project from generated.fresno_proposed_streets where project is not null")
