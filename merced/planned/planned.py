@@ -32,5 +32,5 @@ bna.config.bna.connectivity.table = "automated.merced_planned_connected_blocks_3
 bna.db_connectivity_table = "automated.merced_planned_connected_blocks_3mi"
 bna.sql_subs["connectivity_table"] = sql.Identifier("merced_planned_connected_blocks_3mi")
 bna.sql_subs["connectivity_max_distance"] = sql.Literal(4830)
-bna.calculate_connectivity(blocks=["060290006002009"])
-bna.travel_sheds(["060290006002009"],"automated.merced_planned_hsr_travel_shed",overwrite=True)
+bna.calculate_connectivity(blocks=["060470013023031","060470013023032"])
+bna.travel_sheds(["060470013023031","060470013023032"],"automated.merced_planned_hsr_travel_shed",overwrite=True)

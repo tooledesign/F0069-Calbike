@@ -35,7 +35,7 @@ bna:
 
     network:
         roads:
-            table: "generated.merced_planned_streets"
+            table: "generated.merced_proposed_streets"
             geom: "geom"
             uid: "id"
             source_column: "source"
@@ -49,23 +49,23 @@ bna:
                     forward: fwd_int_stress
                     backward: bwd_int_stress
         intersections:
-            table: "generated.merced_planned_ints"
+            table: "generated.merced_proposed_ints"
             geom: "geom"
             uid: "id"
             cluster_distance: 5
         edges:
-            table: "generated.merced_planned_edges"
+            table: "generated.merced_proposed_edges"
             source_column: "source_node"
             target_column: "target_node"
             stress_column: "edge_stress"
             cost_column: "edge_cost"
             id_column: id
         nodes:
-            table: "generated.merced_planned_nodes"
+            table: "generated.merced_proposed_nodes"
             id_column: id
 
     connectivity:
-        table: "automated.merced_planned_connected_blocks"
+        table: "automated.merced_proposed_connected_blocks"
         source_column: "source_id"
         target_column: "target_id"
         max_distance: 2680
@@ -285,7 +285,7 @@ stress:
         intersection_tolerance: 1
         control:
             # control is required
-            table: "generated.merced_planned_ints"
+            table: "generated.merced_proposed_ints"
             geom: geom
             column:
                 name: "control"
@@ -294,7 +294,7 @@ stress:
                 rrfb: "rrfb"
                 hawk: "hawk"
         island:
-            table: "generated.merced_planned_ints"
+            table: "generated.merced_proposed_ints"
             geom: geom
             column:
                 name: "island"
