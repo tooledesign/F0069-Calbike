@@ -46,7 +46,7 @@ bna.sql_subs["connectivity_max_distance"] = sql.Literal(4830)
 bna.calculate_connectivity(blocks=["060470013023031","060470013023032"])
 for project in projects:
     table = "automated.merced_proposed_hsr_travel_shed_{}".format(project.replace(" ","_").lower())
-    bna.calculate_scenario_connectivity("project",scenario_ids=[project],origin_blocks=["060190003002002"])
+    bna.calculate_scenario_connectivity("project",scenario_ids=[project],origin_blocks=["060470013023031","060470013023032"])
     bna.travel_sheds(["060470013023031","060470013023032"],table,scenario_id=project,overwrite=True)
 
 # aggregate scores

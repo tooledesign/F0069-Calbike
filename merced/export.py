@@ -3,7 +3,7 @@ bna = pybna.pyBNA(config="/home/spencer/dev/calbike/merced/existing/config.yaml"
 bna.export("/home/spencer/gis/calbike/merced_existing.gpkg")
 
 bna.export_table(
-    "generated.merced_existing_edges",
+    "generated.merced_edges",
     "/home/spencer/gis/calbike/merced_existing.gpkg",
     layer="bna_edges_existing"
 )
